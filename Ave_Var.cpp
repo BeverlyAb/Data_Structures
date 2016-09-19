@@ -2,7 +2,7 @@
 	Beverly Abadines
 	HW1.cpp
 	1/14/15; updated 9/18/16
-	Return the average and variance of an array of "ARRAY_SIZE" floats
+	Return the average and variance of an array of "ARRAY_SIZE" amount of floats
 *******************************************************************************************/
 #include <iostream>
 #include <cmath>		// pow

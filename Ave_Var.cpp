@@ -31,7 +31,7 @@ float variance(float container[]) { // Calculates and returns the variance of nu
 	return variance_value;
 } // variance
 
-void populateArray(float container[]) { // Populates array with user inputted floats; +10 is buffer
+void populateArray(float container[]) { // Populates array with user inputted floats; 
 	float input = 0;		
 	int counter = 0;
 	cout << "Enter your values one by one.\n";

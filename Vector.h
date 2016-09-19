@@ -25,7 +25,7 @@ public:
    Vector(unsigned int size);
    Vector(unsigned int size, const T & initial);
    Vector(const Vector<T> & v);           // copy constructor
-   ~Vector();							  // destructor
+   ~Vector();				  // destructor
 	// accessors
    unsigned int capacity() const;         // return capacity of vector (in elements)
    unsigned int size() const;             // return the number of elements in the vector
@@ -47,9 +47,9 @@ public:
    Vector<T> & operator=(const Vector<T> &);
 
 private:
-   unsigned int my_size;				 // can act like a pointer for final element (my_size - 1)
+   unsigned int my_size;		  // can act like a pointer for final element (my_size - 1)
    unsigned int my_capacity;
-   T * buffer;							  // buffer is a pointer that points to a type T array
+   T * buffer;				  // buffer is a pointer that points to a type T array
 };
 #endif
 
@@ -183,7 +183,7 @@ void Vector<T>::reserve(unsigned int capacity) // O(1)
 				temp_buffer[i] = buffer[i];
 			}
 			delete [] buffer;
-			buffer = new T[my_capacity];			// create buffer w/ new capacity
+			buffer = new T[my_capacity];		// create buffer w/ new capacity
 
 			for (int i = 0; i < my_size - 1; i++) { // copy temp to buffer w/ new capacity
 				buffer[i] = temp_buffer[i];
@@ -198,7 +198,7 @@ template <class T>
 void Vector<T>::resize(unsigned int size) // O(1)
 {
 	if (size > my_capacity) { // allocate memory if necessary 
-		reserve(size);		  // my_capacity = size;	
+		reserve(size);	  // my_capacity = size;	
 	}
 	my_size = size;
 	my_capacity -= size;
@@ -213,12 +213,12 @@ void Vector<T>::push_back(const T & value) // O(1)
 		my_size = 0;
 
 		delete [] buffer;	
-		buffer = new T[my_capacity];	// create buffer w/ larger capacity
+		buffer = new T[my_capacity];			// create buffer w/ larger capacity
 
-	} else if (my_size >= my_capacity) {// allocate space
+	} else if (my_size >= my_capacity) {			// allocate space
 		reserve(my_capacity + 5);
 	}
-	buffer[my_size++] = value;			// make last element = value, increase size AFTERWARDS
+	buffer[my_size++] = value;				// make last element = value, increase size AFTERWARDS
 	my_capacity--;						// account for my_capacity
 }
 
@@ -233,14 +233,14 @@ T & Vector<T>::operator[](unsigned int index) //O(1)
 template <class T>
 Vector<T> & Vector<T>::operator=(const Vector<T> & v) // O(n)
 {
-	delete [] buffer;				// start from scratch
+	delete [] buffer;			// start from scratch
 
 	my_size = v.size();
 	my_capacity = v.size();
 
-	buffer = new T[my_capacity];	// allocate space according to v
+	buffer = new T[my_capacity];		// allocate space according to v
 
-	for (int i = 0; i < my_size; i++) { // copy v onto buffer
+	for (int i = 0; i < my_size; i++) { 	// copy v onto buffer
 		buffer[i] = v[i];
 	}
 } // operator =

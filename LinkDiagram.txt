@@ -1,0 +1,40 @@
+/***************************************************************************
+Link: *next_link, *prev_link, value
+List_iterator: Link<T> current_link,  iterator
+Link_lis : *first_link, *last_link 
+
+
+|-----------|
+|___Value___|
+|_next_link_| <---it, current_link
+|_prev_link_|
+|___________|
+
+Link
+
+
+|-----------|
+|___Value___| Link List
+|_next_link_| <- first_link
+|_prev_link_| 
+|___________| 
+
+|-----------|
+|___Value___|
+|_next_link_|
+|_prev_link_| <- it, current_link
+|___________|
+
+|-----------|
+|___Value___|
+|_next_link_|
+|_prev_link_|
+|___________|
+
+|-----------|
+|___Value___| <- last_link
+|_next_link_|
+|_prev_link_|
+|___________|
+
+// write erase and insert,first find iterator

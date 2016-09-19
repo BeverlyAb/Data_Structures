@@ -21,16 +21,16 @@ public:
         String(const char * alpha); 
         ~String();
 		
-		// accessors
-		int length();
+	// accessors
+	int length();
 
-		// operators 
-		char & operator[](int);	
-		String & operator =(const String &);
-		String & operator +=(const String &);
-		friend ostream & operator<<(ostream &, const String &); 
+	// operators 
+	char & operator[](int);	
+	String & operator =(const String &);
+	String & operator +=(const String &);
+	friend ostream & operator<<(ostream &, const String &); 
 	
-		// friends
+	// friends
      	friend bool operator==(const String & , const String &);
         friend bool operator<=(const String &, const String &);
         friend bool operator<(const String &, const String &);

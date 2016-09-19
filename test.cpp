@@ -1,27 +1,20 @@
-// test.cpp
+
+// Small test.cpp to test Map
 
 #include <iostream>
 #include <cassert>
-//#include <queue>
-#include "Deque.h"
+
+#include "Map.h"
 
 using namespace std;
 
-main()
+int main()
 {
-	Deque<int> d;
+   Map<double, long> counts;
 
-	d.push_back(10);
-	d.push_back(20);	// 10, 20
-	d.push_front(1);
-	d.push_front(2);
-	d.push_front(3); // 3, 2, 1 ,10, 20
-
-	Deque<int> c;
-	c = d;
-
-	Deque<int>::iterator i;
-	for (i = c.begin(); i != c.end(); ++i)
-		cout << *i << " ";
-	cout << endl;
+   counts[2.1] = 5;
+   counts[-4] = 2;
+   counts[.35] = 3;
+   counts[-4] = 7;
+   cout << counts[2.1] << " " << counts[-4] << " " << counts[.35] << endl;
 }

@@ -27,22 +27,22 @@ void selection_sort(vector <int> &v) {
 // Creates a vector of int with a total number of "total_elements" and calls selection_sort (&v)
 int main()
 {
-		int total_elements;
+	int total_elements;
         cout << "Number of total int?\n";
         cin >> total_elements;        
 		    
-	    vector <int> create_vector;
+	vector <int> create_vector;
         srand(time(0)); // set random seed
 	
-		for (int i = 0; i < total_elements; i++) { // fill vector with total_elements numbers
+	for (int i = 0; i < total_elements; i++) { // fill vector with total_elements numbers
                 create_vector.push_back(rand() % 1000000); // numbers 0 - 999999
         }
-
-		selection_sort(create_vector); // Order the values
+	
+	selection_sort(create_vector); // Order the values
 		
-		for(int i = 0; i < create_vector.size(); i++) { // Print Values
-			cout << create_vector[i] << endl;
-		}		        
+	for(int i = 0; i < create_vector.size(); i++) { // Print Values
+		cout << create_vector[i] << endl;
+	}		        
 } // Vector and selection_sort
 
 

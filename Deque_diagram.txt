@@ -1,7 +1,7 @@
 ﻿					Deque
 [										]
 Deque.front()			value			Deque.back()
-					int			Deque.size()
+				int			Deque.size()
 Deque.begin()			itr			Deque.end()
 
 								 	

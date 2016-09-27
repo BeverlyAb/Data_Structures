@@ -1,0 +1,13 @@
+﻿					Deque
+[										]
+Deque.front()			value			Deque.back()
+					int			Deque.size()
+Deque.begin()			itr			Deque.end()
+
+								 	
+				V1	:	V2	
+[				]		[				]
+V1.back()		V1.front()	:	V2.front()		V2.back()	value
+V1.size()				:	V2.size()				int
+V1.end()		V1.begin()	:	V2.begin()		V2.end()	itr					
+

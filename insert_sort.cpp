@@ -16,8 +16,8 @@ void insertion_sort(vector <int> &v) {
 	int j;
 	for (int i = 1; i < v.size(); i++) { // loops = n - 1    	
 		for (elem = v[i], j = i - 1; j >= 0 && elem < v[j]; j-- ) { // Declaring two ints in for loop; must be SAME type (ex. int); loops = n
-        	v[j + 1] = v[j]; // can be written as v[i]  
-        }	
+        		v[j + 1] = v[j]; // can be written as v[i]  
+       		}	
 		v[j + 1] = elem;    	
 	}
 } //insertion_sort

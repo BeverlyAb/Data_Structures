@@ -16,11 +16,11 @@ using namespace std;
 // selection_sort: Sort integers in vector in non-decreasing order by establishing the correct value of the lowest position first
 void selection_sort(vector <int> &v) {
 	for (int i = 0; i <  v.size() - 1; i++) { // loops = n
-    	for (int j = i + 1; j < v.size(); j++) { // loops = n - 1
-        	if (v[i] > v[j]) {
-            	swap(v[i], v[j]);
-        	}
-    	}
+    		for (int j = i + 1; j < v.size(); j++) { // loops = n - 1
+        		if (v[i] > v[j]) {
+            		swap(v[i], v[j]);
+        		}
+    		}
 	}
 } // selection_sort
 

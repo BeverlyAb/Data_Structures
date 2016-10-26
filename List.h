@@ -52,18 +52,18 @@ template <class T> //Default Constructor
 List<T>::List() // O(1)
 {
 	first_link = 0;
-    last_link = 0;
-    my_size = 0;
+    	last_link = 0;
+    	my_size = 0;
 } //List()
 
 template <class T> //Constructor
 List<T>::List(const List & l) //O(n)
 {
 	first_link = 0;
-    last_link = 0;
-    my_size = 0;
-    for (Link<T> * current = l.first_link; current != 0; current = current->next_link) {
-    	push_back(current->value); // dereference
+   	last_link = 0;
+    	my_size = 0;
+    	for (Link<T> * current = l.first_link; current != 0; current = current->next_link) {
+    		push_back(current->value); // dereference
 	}
 } // List(l)
 

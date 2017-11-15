@@ -1,17 +1,17 @@
 #include "MM1queue.h"
-#include <queue>
 #include <random>
 
 //#include <iostream>
-#include "job.h"
+#include "Job.h"
 
 #define mu 1
 #define lambda 1
 
-template <class T, template <class T, class = allocator<T> > class Container = queue>
+//template <class T, template <class T, class = allocator<T> > class Container = queue>
+//template<typename T, template <typename, typename> class Container = std::queue>
 
-template<class T>
-void MM1queue<T>::push(const T & myJob)
+//template<class T>
+void MM1queue::push(const T & myJob)
 {
 	currentTime = time(&timer);
 	while(currentTime < enqueueTime){
@@ -21,25 +21,29 @@ void MM1queue<T>::push(const T & myJob)
 	container.push_back(myJob);
 }
 
-template<class T>
-void MM1queue<T>::serve(const T & myJob)
+//template<class T>
+void MM1queue::serve(const T & myJob)
 {
 	if(!isEmpty()){
 		double temp = time(&timer);
 		currentTime = temp;
 		front().setService(serveTime);
 
+		servable = true; //currently serving
 		while(currentTime < temp + serveTime){
 			currentTime = time(&timer);
 		}
+		front().setUtil(currentTime - temp);
+
 		double myArrive = front.().getArrival();
-		front().setResponse(time(&timer) - myArrive);
+		front().setResponse(currentTime - myArrive);
 		container.pop_front();
+		servable = false;
 	}
 }
 
-template<class T>
-void MM1queue<T>::setEnqueue()
+//template<class T>
+void MM1queue::setEnqueue()
 {
 	default_random_engine generator;
   exponential_distribution<double> distribution(lambda);
@@ -49,8 +53,8 @@ void MM1queue<T>::setEnqueue()
 	enqueueTime = time(&timer)) + calc;
 }
 
-template<class T>
-void MM1queue<T>::setServe()
+//template<class T>
+void MM1queue::setServe()
 {
 	default_random_engine generator;
   exponential_distribution<double> distribution(mu);
@@ -60,21 +64,26 @@ void MM1queue<T>::setServe()
 	serveTime = calc;
 }
 
-template<class T>
-T & MM1queue<T>::isEmpty()
+//template<class T>
+T & MM1queue::isEmpty()
 {
 	return container.empty();
 }
 
+//template<class T>
+T & MM1queue::isServable()
+{
+	return servable;
+}
 
-template<class T>
-T & MM1queue<T>::front()
+//template<class T>
+T & MM1queue::front()
 {
 	container.front();
 }
 
-template<class T>
-T & MM1queue<T>::back()
+//template<class T>
+T & MM1queue::back()
 {
 	container.back();
 }

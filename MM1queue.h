@@ -2,12 +2,13 @@
 #define MM1QUEUE_H
 #include <time.h>
 #include <queue>
-
+//#include "Job.h"
 //template<typename T, template <typename, typename> class Container = std::queue>
-template<typename T, template <typename, typename> class Container = std::queue>
-//template <class T>
+//template<typename T, template <typename, typename> class Container = std::queue>
+template <class T>
 class MM1queue {
 	private:
+		std::queue<T> myQueue;
 		double enqueueTime;
   	double serveTime;
 	 	double currentTime;
@@ -15,7 +16,7 @@ class MM1queue {
 		bool servable;
 
 	public:
-		  //MM1queue(); queue should have constructor and destructor
+		  MM1queue();
 			void push(const T & myJob);
 			void serve();
 			void setEnqueue();

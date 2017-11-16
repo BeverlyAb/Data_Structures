@@ -54,3 +54,8 @@ double Job::getUtil()
 {
   return util;
 }
+
+int Job::getID()
+{
+  return ID;
+}

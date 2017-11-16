@@ -8,7 +8,10 @@
 template <class T>
 class MM1queue {
 	private:
+	//	double glob_counter;
 		std::queue<T> myQueue;
+		int enqID;
+		int serveID;
 		double enqueueTime;
   	double serveTime;
 	 	double currentTime;
@@ -17,12 +20,13 @@ class MM1queue {
 
 	public:
 		  MM1queue();
-			void push(const T & myJob);
-			void serve();
-			void setEnqueue();
+			void push(const T & myJob, double timeIn);
+			double serve(double timeIn);
+			void setEnqueue(double timeIn);
 			void setServe();
 			bool isEmpty();
 			bool isServable();
+			int size();
 		//	void getCurrentTime(double t);
 			T & back();// returns value at the back of Queue; O(1)
  			T & front();						// returns value at the front of Queue; O(1)

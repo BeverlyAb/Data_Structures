@@ -1,6 +1,9 @@
 test: MM1queueTest.o MM1queue.o Job.o
 	g++ -o test MM1queueTest.o MM1queue.o Job.o
 
+self: MM1queue.o Job.o
+	g++ -o self MM1queue.o Job.o
+
 MM1queueTest.o: MM1queueTest.cpp
 	g++ -c MM1queueTest.cpp
 

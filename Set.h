@@ -84,7 +84,7 @@ Node<T> * Node<T>::merge(Node<T> * left, Node<T> * right) // O (log n)
 	}
 	
 	Node<T> * child = merge(left, right->leftChild); // If there's something from both Nodes, create child 
-	child->parent = right;							 // connect child and parent, with left being child and right being parent
+	child->parent = right;	// connect child and parent, with left being child and right being parent
 	right->leftChild = child;
 	return right;
 }

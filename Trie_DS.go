@@ -66,10 +66,9 @@ func (t * Trie)delete(current TrieNode, word string, index int)bool{
 		if !current.endOfWord{
 			return false
 		}
+		current.endOfWord = false
+		return len(current.children) == 0
 	}
-	current.endOfWord = false
-	return len(current.children) == 0
-
 	var ch byte = word[index]
 	node, found := current.children[ch]
 	if !found{
@@ -95,6 +94,6 @@ func main() {
 	test.Trie()
 	test.Insert("abcde")
 	test.Insert("abc")
-	test.Delete("abcde")
-	fmt.Println(test.Search("abcde"))
+	// test.Delete("abcde")
+	fmt.Println(test.Search("abc"))
 }

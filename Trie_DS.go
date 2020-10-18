@@ -61,9 +61,40 @@ func (t * Trie)Insert(word string){
 	t.insert(t.root, word, 0)	
 }
 
+func (t * Trie)delete(current TrieNode, word string, index int)bool{
+	if index == len(word){
+		if !current.endOfWord{
+			return false
+		}
+	}
+	current.endOfWord = false
+	return len(current.children) == 0
+
+	var ch byte = word[index]
+	node, found := current.children[ch]
+	if !found{
+		return false
+	}
+	
+	deletePot := t.delete(node, word, index+1)
+
+	if deletePot{
+		delete(current.children,ch)
+		return len(current.children) == 0
+	}
+	return false
+}
+
+func (t * Trie)Delete(word string){
+	t.delete(t.root, word, 0)
+}
+
+
 func main() {
 	var test Trie
 	test.Trie()
-	test.Insert("abcd")
-	fmt.Println(test.Search("abcd"))
+	test.Insert("abcde")
+	test.Insert("abc")
+	test.Delete("abcde")
+	fmt.Println(test.Search("abcde"))
 }
